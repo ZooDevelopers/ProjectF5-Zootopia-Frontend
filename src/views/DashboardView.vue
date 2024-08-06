@@ -1,12 +1,12 @@
 <script setup>
+import HeaderOtherPages from '@/components/HeaderOtherPages.vue';
 import { ref } from 'vue';
-import Headerlogin from '@/components/HeaderLogin.vue';
 
 </script>
 
 <template>
   <main>
-    <Headerlogin />
+    <HeaderOtherPages />
   </main>
  
 </template>
