@@ -1,6 +1,5 @@
 <template>
   <div class="login-container">
-    
     <form @submit.prevent="handleSubmit">
       <h2 class="login-title">Login</h2>
       <div class="form-group">
@@ -56,8 +55,6 @@ export default {
   height: 100vh;
   padding: 20px;
   box-sizing: border-box;
-  
- 
 }
 
 .login-title {
@@ -69,22 +66,21 @@ export default {
 }
 
 form {
-  width: 500px;
-  height: 500px;
+  width: 100%;
+  max-width: 500px;
   background-color: #D9D9D9;
   padding: 20px;
   border-radius: 20px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  align-content: center;
 }
 
 .form-group {
   margin-bottom: 20px;
-  text-align: center;
 }
 
 label {
-  display: block;
+  display: flex;
+  justify-content: center;
   margin-bottom: 5px;
   font-weight: bold;
   color: #000000;
@@ -93,7 +89,7 @@ label {
 
 input {
   width: 100%;
-  padding: 20px;
+  padding: 10px;
   border: 1px solid #ddd;
   font-size: 14px;
   background-color: #FFFFFF;
@@ -112,11 +108,11 @@ input::placeholder {
 
 .submit-button {
   width: auto;
-  padding: 20px 70px;
+  padding: 10px 40px;
   background-color: #FFFFFF;
   border: 1px solid #ddd;
   border-radius: 30px;
-  font-size: 20px;
+  font-size: 16px;
   font-weight: bold;
   color: #000000;
   cursor: pointer;
@@ -125,5 +121,25 @@ input::placeholder {
 
 .submit-button:hover {
   background-color: #e0e0e0;
+}
+
+@media (max-width: 767.98px) {
+  form {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .login-title {
+    font-size: 20px;
+  }
+
+  input {
+    padding: 10px;
+  }
+
+  .submit-button {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
 }
 </style>

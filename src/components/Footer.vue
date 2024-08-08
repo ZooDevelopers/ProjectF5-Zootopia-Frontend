@@ -70,17 +70,17 @@
     }
   }
 
-  .text-muted {
-    color: black !important;
-  }
+.text-muted {
+  color: black !important;
+}
 
-  .text-decoration-none {
-    text-decoration: none !important;
-  }
+.text-decoration-none {
+  text-decoration: none !important;
+}
 
-  .bi {
-    fill: currentColor;
-  }
+.bi {
+  fill: currentColor;
+}
 
   .nav {
     padding: 0;
@@ -109,3 +109,5 @@
     display: block; 
   }
 </style>
+
+
