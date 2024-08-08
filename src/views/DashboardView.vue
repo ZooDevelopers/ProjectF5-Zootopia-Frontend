@@ -8,5 +8,16 @@ import { ref } from 'vue';
   <main>
     <HeaderOtherPages />
   </main>
+
  
 </template>
+<style>
+body{
+  background-image: url(../../public/img/dashboard.jpg);
+  background-size: cover; 
+  background-repeat: no-repeat; 
+  background-position: center center;
+  height: 100vh; 
+  margin: 0; 
+
+}</style>
