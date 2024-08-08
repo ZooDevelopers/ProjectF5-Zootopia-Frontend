@@ -29,51 +29,75 @@
   </footer>
 </template>
 
+
 <style scoped>
+.page-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.content {
+  flex: 1;
+}
+
+.footer {
+  background-color: #D9D9D9;
+  color: black !important;
+  width: 100%;
+  margin-top: auto;
+}
+
+#zoocoders {
+  font-size: 30px;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.text-muted {
+  color: black !important;
+}
+
+.text-decoration-none {
+  text-decoration: none !important;
+}
+
+.bi {
+  fill: currentColor;
+}
+
+.nav {
+  padding: 0;
+}
+
+.social-icons li {
+  display: flex;
+  justify-items: baseline;
+}
+
+.social-icons li img {
+  display: block;
+}
+
+/* Responsive Styles */
+@media (max-width: 767.98px) {
   .footer {
-    background-color: #D9D9D9;
-    color: black !important;
-    position:absolute;
-    bottom: 0;
-    width: 100%;
-    margin-top: auto;
-  }
-  
-  #zoocoders{
-    font-size: 30px;
+    padding: 1rem;
   }
 
-  .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  #zoocoders {
+    font-size: 20px;
   }
 
-  .text-muted {
-    color: black !important;
+ 
+  .social-icons {
+    justify-content: center;
   }
-
-  .text-decoration-none {
-    text-decoration: none !important;
-  }
-
-  .bi {
-    fill: currentColor;
-  }
-
-  .nav {
-    padding: 0;
-  }
-
-  .social-icons li {
-    display: flex;
-    justify-items: baseline; 
-  }
-
-  .social-icons li img {
-    display: block; 
-  }
-
-
-  
+}
 </style>
+
+
