@@ -7,12 +7,13 @@ import { ref } from 'vue';
 <template>
   <main>
     <HeaderOtherPages />
+    
   </main>
 
  
 </template>
-<style>
-body{
+<style scoped>
+main{
   background-image: url(../../public/img/dashboard.jpg);
   background-size: cover; 
   background-repeat: no-repeat; 
@@ -20,4 +21,5 @@ body{
   height: 100vh; 
   margin: 0; 
 
-}</style>
+}
+</style>
