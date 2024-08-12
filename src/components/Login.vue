@@ -1,24 +1,32 @@
 <script setup>
-import { ref } from 'vue';
-import { useRouter } from 'vue-router';
-import { useAuthStore } from '../stores/auth';
+import { ref } from "vue";
+import { useRouter } from "vue-router";
+import { useAuthStore } from "../stores/auth";
+import { useDashboardStore } from "../stores/dashboard";
+import DashboardView from "@/views/DashboardView.vue";
 
 const router = useRouter();
 const authStore = useAuthStore();
 
-const username = ref('');
-const password = ref('');
-const errorMessage = ref('');
+const username = ref("");
+const password = ref("");
+const errorMessage = ref("");
+const isLoading = ref(false);
 
 const handleSubmit = async () => {
+  isLoading.value = true;
+  errorMessage.value = ""; // Reset error message
   try {
     await authStore.login(username.value, password.value);
-    router.push('/dashboard');  
+    router.push("/dashboard");
   } catch (error) {
-    errorMessage.value = error.message;
+    errorMessage.value = "Invalid username or password.";
+  } finally {
+    isLoading.value = false;
   }
 };
 </script>
+
 <template>
   <div class="login-container">
     <form @submit.prevent="handleSubmit">
@@ -31,6 +39,7 @@ const handleSubmit = async () => {
           id="username"
           placeholder="Enter your username"
           required
+          autocomplete="username"
         />
       </div>
       <div class="form-group">
@@ -41,19 +50,22 @@ const handleSubmit = async () => {
           id="password"
           placeholder="Enter your password"
           required
+          autocomplete="current-password"
         />
       </div>
       <div class="submit-container">
-        <button type="submit" class="submit-button">SUBMIT</button>
+        <button
+          type="submit"
+          class="submit-button"
+          :disabled="isLoading"
+        >
+          {{ isLoading ? 'Loading...' : 'SUBMIT' }}
+        </button>
       </div>
       <p v-if="errorMessage" class="error-message">{{ errorMessage }}</p>
     </form>
   </div>
 </template>
-
-
-
-
 
 <style scoped>
 .login-container {
@@ -78,7 +90,7 @@ const handleSubmit = async () => {
 form {
   width: 100%;
   max-width: 500px;
-  background-color: #D9D9D9;
+  background-color: #d9d9d9;
   padding: 20px;
   border-radius: 20px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -102,7 +114,7 @@ input {
   padding: 10px;
   border: 1px solid #ddd;
   font-size: 14px;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   border-radius: 20px;
   box-sizing: border-box;
 }
@@ -119,7 +131,7 @@ input::placeholder {
 .submit-button {
   width: auto;
   padding: 10px 40px;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   border: 1px solid #ddd;
   border-radius: 30px;
   font-size: 16px;
@@ -131,6 +143,17 @@ input::placeholder {
 
 .submit-button:hover {
   background-color: #e0e0e0;
+}
+
+.submit-button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.error-message {
+  color: red;
+  text-align: center;
+  margin-top: 10px;
 }
 
 @media (max-width: 767.98px) {
