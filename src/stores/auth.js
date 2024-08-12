@@ -3,16 +3,17 @@ import { defineStore } from "pinia";
 export const useAuthStore = defineStore("auth", {
 
   state: () => ({
-    users: [], 
+    users: [
+      { username: "admin", password: "password" },  
+    ],
     user: null,
-
   }),
 
   actions: {  
     async login(username, password) {
         const uri = import.meta.env.VITE_API_ENDPOINT_LOGIN
       const admin = this.users.find(
-        (admin) => user.username === username && user.password === password
+        (admin) => admin.username === username && admin.password === password
       );
       if (admin) {
         this.admin = { username };
@@ -21,7 +22,7 @@ export const useAuthStore = defineStore("auth", {
       }
     },
     logout() {
-      this.user = admin;
+      this.user = null;
       
     },
     checkAuth() {

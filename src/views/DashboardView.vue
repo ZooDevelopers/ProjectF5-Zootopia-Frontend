@@ -1,5 +1,6 @@
 <script setup>
 import HeaderOtherPages from '@/components/HeaderOtherPages.vue';
+import Login from '@/components/Login.vue';
 import { ref } from 'vue';
 
 </script>
