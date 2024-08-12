@@ -1,3 +1,24 @@
+<script setup>
+import { ref } from 'vue';
+import { useRouter } from 'vue-router';
+import { useAuthStore } from '../stores/auth';
+
+const router = useRouter();
+const authStore = useAuthStore();
+
+const username = ref('');
+const password = ref('');
+const errorMessage = ref('');
+
+const handleSubmit = async () => {
+  try {
+    await authStore.login(username.value, password.value);
+    router.push('/dashboard');  
+  } catch (error) {
+    errorMessage.value = error.message;
+  }
+};
+</script>
 <template>
   <div class="login-container">
     <form @submit.prevent="handleSubmit">
@@ -25,25 +46,14 @@
       <div class="submit-container">
         <button type="submit" class="submit-button">SUBMIT</button>
       </div>
+      <p v-if="errorMessage" class="error-message">{{ errorMessage }}</p>
     </form>
   </div>
 </template>
 
-<script>
-export default {
-  data() {
-    return {
-      username: '',
-      password: ''
-    }
-  },
-  methods: {
-    handleSubmit() {
-      console.log('Form submitted:', { username: this.username, password: this.password });
-    }
-  }
-}
-</script>
+
+
+
 
 <style scoped>
 .login-container {
