@@ -13,3 +13,9 @@ import SpeciesView from '../components/SpeciesView.vue';
   </main>
  
 </template>
+
+<style scoped>
+
+
+
+</style>
