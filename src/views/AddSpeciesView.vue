@@ -2,12 +2,12 @@
 import { ref } from 'vue';
 
 import HeaderOtherPages from '@/components/HeaderOtherPages.vue';
-import FormComponent from '../components/FormComponent.vue'
+import SpeciesForm from '@/components/SpeciesForm.vue';
 </script>
 
 <template>
   <main>
     <HeaderOtherPages />
+    <SpeciesForm/>
   </main>
- <FormComponent></FormComponent>
 </template>
