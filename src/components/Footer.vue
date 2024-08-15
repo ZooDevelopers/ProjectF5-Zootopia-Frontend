@@ -1,9 +1,4 @@
 <template>
-  <div class="page-container">
-    <div class="content">
-      <!-- Tu contenido aquí -->
-    </div>
-  </div>
   <footer class="footer mt-auto py-3 border-top">
     <div class="container d-flex flex-wrap justify-content-between align-items-center">
       <div class="col-md-4 d-flex align-items-center">

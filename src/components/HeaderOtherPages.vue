@@ -78,7 +78,6 @@ const toggleMenu = () => {
   height: 32px;
 }
 
-/* Responsive Styles */
 @media (max-width: 768px) {
   .nav {
     position: absolute;
