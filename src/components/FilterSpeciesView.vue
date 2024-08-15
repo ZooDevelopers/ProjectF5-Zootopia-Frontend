@@ -45,25 +45,69 @@
   </script>
   
   <style scoped>
-  .filter-form {
-    margin-bottom: 1rem;
-  }
-  
-  .filter-form label {
-    display: block;
-    margin: 0.5rem 0;
-  }
-  
-  .filter-form input {
-    margin-bottom: 1rem;
-    padding: 0.5rem;
-    width: 100%;
-  }
-  
-  .card-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-  }
-  </style>
-  
+.species-filter-container {
+  background-color: #f9f9f9; /* Fondo gris claro */
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center; /* Centrar el contenido */
+}
+
+h1 {
+  color: #333; /* Texto gris oscuro */
+  margin-bottom: 1rem;
+}
+
+.filter-form {
+  margin-bottom: 2rem;
+  background-color: #ffffff; /* Fondo blanco para el formulario */
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+}
+
+.filter-form label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #666; /* Texto gris medio */
+}
+
+.filter-form input {
+  padding: 0.75rem;
+  width: 100%;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.filter-form button {
+  background-color: #999c99; /* Botón verde suave */
+  color: rgb(46, 44, 44);
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.filter-form button:hover {
+  background-color: #454645; 
+  color: white;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center; 
+}
+
+.card-container p {
+  color: #888; 
+  font-size: 1.2rem;
+}
+</style>
