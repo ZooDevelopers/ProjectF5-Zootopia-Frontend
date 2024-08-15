@@ -11,8 +11,12 @@ export function getSpecies() {
   return api.get('/species');
 }
 
-export function filterSpecies(family, type) {
+export function filterSpecies(family) {
   return api.get('/species/filter', {
-    params: { family, type }
+    params: { family }
   });
+}
+
+export function createSpecies(speciesData) {
+  return api.post('/species', speciesData); 
 }
