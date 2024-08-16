@@ -2,15 +2,20 @@
   <div>
     <h1>Lista de Especies</h1>
     <div class="card-container">
-      <Card v-for="species in speciesList" :key="species.id" :species="species" />
+      <Card 
+        v-for="species in speciesList" 
+        :key="species.id" 
+        :species="species" 
+        @speciesDeleted="removeSpecies" 
+      />
       <p v-if="speciesList.length === 0">No se encontraron especies.</p>
     </div>
   </div>
 </template>
 
 <script>
-import Card from '@/components/Card.vue'; 
-import { getSpecies } from '@/api/species'; 
+import Card from '../components/Card.vue'; 
+import { getSpecies } from '../api/species'; 
 
 export default {
   components: {
@@ -29,6 +34,11 @@ export default {
     } catch (error) {
       console.error('Error al obtener la lista de especies:', error); 
     }
+  },
+  methods: {
+    removeSpecies(id) {
+      this.speciesList = this.speciesList.filter(species => species.id !== id);
+    }
   }
 }
 </script>
@@ -44,3 +54,4 @@ p {
   margin-top: 16px;
 }
 </style>
+

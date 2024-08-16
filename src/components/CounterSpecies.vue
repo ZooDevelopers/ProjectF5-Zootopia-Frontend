@@ -8,7 +8,7 @@
   </div>
 </template>
 <script>
-import { getSpecies } from '@/api/species';  // Asegúrate de que la ruta al archivo species.js es correcta
+import { getSpecies } from '../api/species';  // Asegúrate de que la ruta al archivo species.js es correcta
 
 export default {
   data() {

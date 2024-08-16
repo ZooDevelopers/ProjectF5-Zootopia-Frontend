@@ -16,7 +16,7 @@
   </template>
   
   <script>
-  import Card from '@/components/Card.vue'; 
+  import Card from '../components/Card.vue'; 
   import { filterSpecies } from '../api/species';
   
   export default {

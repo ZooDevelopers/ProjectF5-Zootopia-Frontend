@@ -18,5 +18,9 @@ export function filterSpecies(family) {
 }
 
 export function createSpecies(speciesData) {
-  return api.post('/species', speciesData); 
+  return api.post('/species', speciesData);
+}
+
+export function deleteSpecies(id) {
+  return api.delete(`/species/${id}`);
 }

@@ -10,7 +10,7 @@
   </template>
   
   <script>
-  import { login } from '@/api/auth';
+  import { login } from '../api/auth';
   
   export default {
     data() {

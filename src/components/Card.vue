@@ -1,26 +1,40 @@
 <template>
-    <div class="card" style="width: 18rem;">
-      <img :src="species.imageUrl" class="card-img-top" alt="Imagen de {{ species.name }}">
-      <div class="card-body">
-        <h5 class="card-name">Name: {{ species.name }}</h5>
-        <h5 class="card-family">Family: {{ species.family }}</h5>
-        <h5 class="card-gender">Gender: {{ species.gender }}</h5>
-        <h5 class="card-date">Date of Entry: {{ species.dateOfEntry }}</h5>
-      </div>
+  <div class="card" style="width: 18rem;">
+    <img :src="species.imageUrl" class="card-img-top" alt="Imagen de {{ species.name }}">
+    <div class="card-body">
+      <h5 class="card-name">Name: {{ species.name }}</h5>
+      <h5 class="card-name">Type: {{ species.type }}</h5>
+      <h5 class="card-family">Family: {{ species.family }}</h5>
+      <h5 class="card-gender">Gender: {{ species.gender }}</h5>
+      <h5 class="card-date">Date of Entry: {{ species.dateOfEntry }}</h5>
+      <button @click="deleteSpecies" class="btn btn-danger">Borrar</button>
     </div>
-  </template>
-  
-  <script>
-  export default {
-    props: {
-      species: {
-        type: Object,
-        required: true
+  </div>
+</template>
+
+<script>
+import { deleteSpecies } from '../api/species';
+
+export default {
+  props: {
+    species: {
+      type: Object,
+      required: true
+    }
+  },
+  methods: {
+    async deleteSpecies() {
+      try {
+        await deleteSpecies(this.species.id); 
+        this.$emit('speciesDeleted', this.species.id); 
+      } catch (error) {
+        console.error('Error deleting species:', error);
       }
     }
   }
-  </script>
-  
+}
+</script>
+
   <style scoped>
 .card {
   background-color: #f9f9f9; 

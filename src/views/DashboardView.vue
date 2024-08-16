@@ -1,7 +1,7 @@
 <script setup>
-import HeaderOtherPages from '@/components/HeaderOtherPages.vue';
+import HeaderOtherPages from '../components/HeaderOtherPages.vue';
 import { ref } from 'vue';
-import CounterSpecies from '@/components/CounterSpecies.vue'
+import CounterSpecies from '../components/CounterSpecies.vue'
 
 </script>
 
