@@ -1,9 +1,15 @@
 <script setup>
-import TheWelcome from '../components/TheWelcome.vue'
+import { ref } from 'vue';
+import Headerlogin from '../components/HeaderLogin.vue';
+import Login from '../components/Login.vue';
+
+
 </script>
 
 <template>
   <main>
-    <TheWelcome />
+    <Headerlogin />
+    <Login></Login>
   </main>
+   
 </template>
