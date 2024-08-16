@@ -7,13 +7,15 @@ const api = axios.create({
   withCredentials: true
 });
 
-export function getSpecies() {
-  return api.get('/species');
+export function getSpecies(page = 0, size = 8) {
+  return api.get('/species', {
+    params: { page, size }
+  });
 }
 
-export function filterSpecies(family) {
+export function filterSpecies(family, page = 0, size = 8) {
   return api.get('/species/filter', {
-    params: { family }
+    params: { family, page, size }
   });
 }
 
